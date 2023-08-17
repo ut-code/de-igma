@@ -3,22 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" >
     <title>DENIGMA</title>
+    <link rel="stylesheet" href="../style.css" />
   </head>
-  <body>
-    <div id="quiz-container">
-      <div>暗号文</div>
-      <div class="question" id="question">question</div>
-      <form>
-        <div class="answer">
-          <label>回答：<input type="text" id="answer"></label>
-          <button id="submit">submit</button>
-        </div>
-      </form>
+  <body class="overall">
+    <div id="mainmenu-title">DENIGMA</div>
+    <div id="main-content" class="mainmenu-choose">
+      <div id="mainmenu-quiz">
+        暗号解読<br />
+        <a id="quiz-href" href="../playCaesar">単純シーザーを解読する</a><br>
+        <a id="quiz-href" href="../playPeriodicCaesar">周期変化シーザーを解読する</a>
     </div>
-    <button disabled="true" id="next">NextQuestion</button>
-    <script>var exports = {};</script>
-    <script type="module" src="./quizCaesar.js"></script>
   </body>
 </html>

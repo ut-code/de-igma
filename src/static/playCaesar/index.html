@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" >
+    <title>DENIGMA</title>
+  </head>
+  <body>
+    <div id="quiz-container">
+      <div>暗号文</div>
+      <div class="question" id="question"></div>
+      <form>
+        <div class="answer">
+          <label>回答：<input type="text" id="answer"></label>
+          <button id="submit">submit</button>
+        </div>
+      </form>
+    </div>
+    <button disabled="true" id="next">NextQuestion</button>
+    <script>var exports = {};</script>
+    <script type="module" src="./quizCaesar.js"></script>
+  </body>
+</html>
