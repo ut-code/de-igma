@@ -46,7 +46,7 @@ function checkAnswer() {
   if (answer === question) {
     alert("正解！");
   } else {
-    alert("不正解！");
+    alert("不正解！, 答えは" + question + "です。");
   }
   nextButton.disabled = false;
   submitButton.disabled = true;
