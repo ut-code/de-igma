@@ -34,5 +34,5 @@ app.get("/data", async (request, response) => {
   }
 });
 
-addHirabun("I have a pen.")
+// addHirabun("I have a pen.")
 app.listen(3000);
