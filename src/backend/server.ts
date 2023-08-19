@@ -1,6 +1,12 @@
 import { PrismaClient } from "@prisma/client";
 import express, { response } from "express";
 const app = express();
+import cookieParser from "cookie-parser";
+import cors from "cors";
+app.use(express.json()); // JSON ボディをパースするためのミドルウェア
+app.use(cookieParser());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("src/static"));
 
@@ -36,15 +42,14 @@ app.get("/data", async (request, response) => {
   }
 });
 
+app.post("/addHirabun", (request, response) => {
+  const hirabun = request.body.hirabun;
+  addHirabun(hirabun);
+});
 // addHirabun("I have a pen.")
 
 //cookie関連
-import cookieParser from "cookie-parser";
-import cors from "cors";
-app.use(express.json()); // JSON ボディをパースするためのミドルウェア
-app.use(cookieParser());
-app.use(cors());
-app.use(express.urlencoded({ extended: true }));
+
 app.post("/sendUserName", (req, res) => {
   const { username, password } = req.body;
 
