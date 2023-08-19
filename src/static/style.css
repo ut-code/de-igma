@@ -61,6 +61,19 @@
     margin: 1%;
     font-size: x-large;
 }
+#cipher-type{
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    margin: 1%;
+    margin-bottom: 2vw;
+    font-size: xx-large;
+}
+#cipher-indicator{
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    margin: 1%;
+    font-size: large;
+}
 #question{
     font-size: xx-large;
     margin: 1vw;
@@ -94,7 +107,7 @@
     margin: 1vw 2vw;
 }
 #next:disabled{
-    background-color: var(--button-disabled-background-color);
+    background-color: var(--button-disabled-bg-color-color);
     color: var(--button-disabled-text-color);
     border-color: var(--button-disabled-border-color);
     margin: 1vw 2vw;
