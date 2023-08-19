@@ -85,6 +85,19 @@
   margin-left: 2vw;
   margin-bottom: 3vw;    
 }
+.hint{
+  color: var(--inputbox-text-color);
+  font-size: large;
+}
+#hint{
+  margin: 1vw;
+  margin-left: 2vw;
+  margin-bottom: 3vw;
+}
+#hint-button{
+  background-color: var(--button-bg-color);
+  border-color: var(--button-border-color);
+}
 #answer-label{
   color: var(--main-text-color);
   font-size: x-large;
@@ -112,7 +125,7 @@
   margin: 1vw 2vw;
 }
 #next:disabled{
-  background-color: var(--button-disabled-bg-color-color);
+  background-color: var(--button-disabled-bg-color);
   color: var(--button-disabled-text-color);
   border-color: var(--button-disabled-border-color);
   margin: 1vw 2vw;

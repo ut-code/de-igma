@@ -66,7 +66,7 @@ function RSAencrypt(raw_input:number, n: number, e: number): number{
     return encrypted
 }
 
-function RSAgenerate(minPrime: number, maxPrime: number): number[]{
+export function RSAgenerate(minPrime: number, maxPrime: number): number[]{
     const primes = primeGen(minPrime, maxPrime)
     const prime1 = primes[randomInt(primes.length)]
     const prime2 = primes[randomInt(primes.length)]
