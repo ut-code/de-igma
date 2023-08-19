@@ -22,3 +22,20 @@
 #mainmenu-login{
     font-size: small
 }
+#answerCorrect{
+    color:red;
+    font-size: 5vw;
+    text-align: center;
+    margin: 5%;
+}
+#answerCorrect-commentary{
+    color:black;
+    font-size:large;
+    margin: 5% 10%;
+}
+#answerCorrect-returnButton{
+    font-size: large;
+    align-items: flex-end;
+    text-align:center;
+    margin: 10% 10%
+}
