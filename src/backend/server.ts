@@ -40,8 +40,10 @@ app.get("/data", async (request, response) => {
 
 //cookie関連
 import cookieParser from "cookie-parser";
+import cors from "cors";
 app.use(express.json()); // JSON ボディをパースするためのミドルウェア
 app.use(cookieParser());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.post("/sendUserName", (req, res) => {
   const { username, password } = req.body;

@@ -200,9 +200,11 @@ app.get("/data", function (request, response) {
 });
 // addHirabun("I have a pen.")
 //cookie関連
+var cors = require("cors");
 var cookie_parser_1 = require("cookie-parser");
 app.use(express_1.json()); // JSON ボディをパースするためのミドルウェア
 app.use(cookie_parser_1());
+app.use(cors());
 app.use(express_1.urlencoded({ extended: true }));
 app.post("/sendUserName", function (req, res) {
   var _a = req.body,
