@@ -155,7 +155,7 @@ to {
 @keyframes fadeUpShortAnime{
   from {
     opacity: 0;
-    transform: translateY(1vw);
+    transform: translateY(0.5vw);
   }
   to {
     opacity: 1;
