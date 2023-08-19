@@ -5,22 +5,35 @@
 .mainmenu-choose{
     height:60%;
     width: 60%;
-    margin: 5% 20%;
+    margin: 5% 15%;
+}
+.fadeUp{
+    animation-name:fadeUpAnime;
+    animation-duration:1.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+.fadeIn{
+    animation-name:fadeInAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
 }
 #mainmenu-title{
     height:20%;
-    width:60%;
-    margin: 5% 20%;
-    font-size: xx-large;
+    width:80%;
+    margin: 7% 10%;
+    font-size: 7vw;
 }
 #mainmenu-quiz{
-    font-size: large;
+    font-size: 2vw;
 }
 #mainmenu-add-new-hirabun{
-    font-size: small
+    font-size: small;
 }
 #mainmenu-login{
-    font-size: small
+    font-size: small;
+    margin-top: 2%
 }
 #answerCorrect{
     color:red;
@@ -38,4 +51,22 @@
     align-items: flex-end;
     text-align:center;
     margin: 10% 10%
+}
+@keyframes fadeInAnime{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(3vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
