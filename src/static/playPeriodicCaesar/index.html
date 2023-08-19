@@ -8,11 +8,13 @@
   </head>
   <body>
     <div id="quiz-container">
-      <div>暗号文</div>
-      <div class="question" id="question"></div>
+      <div id="cipher-type">Mode: Simple Caesar</div>
+      <div id="cipher-indicator">暗号文</div>
+      <div class="question" id="question">question</div>
       <form>
         <div class="answer">
-          <label>回答：<input type="text" id="answer"></label>
+          <div id="answer-label">回答<br></div>
+            <input type="text" id="answer">
           <button id="submit">submit</button>
         </div>
       </form>
