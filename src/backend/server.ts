@@ -5,10 +5,10 @@ const app = express();
 app.use(express.static("src/static"));
 
 const client = new PrismaClient();
-type Questions = { 
-  id:               bigint; 
+type Questions = {
+  id: bigint;
   EnglishSentences: string;
-  created_at:       Date; 
+  created_at: Date;
 }[];
 
 async function main() {
@@ -18,8 +18,10 @@ async function main() {
 
 //平文を増やす関数
 async function addHirabun(sentence: string) {
-  const newQuestion = await client.questions.create({ data: { EnglishSentences: sentence } });
-} 
+  const newQuestion = await client.questions.create({
+    data: { EnglishSentences: sentence },
+  });
+}
 
 app.get("/data", async (request, response) => {
   try {
@@ -35,4 +37,26 @@ app.get("/data", async (request, response) => {
 });
 
 // addHirabun("I have a pen.")
+
+//cookie関連
+import cookieParser from "cookie-parser";
+import cors from "cors";
+app.use(express.json()); // JSON ボディをパースするためのミドルウェア
+app.use(cookieParser());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.post("/sendUserName", (req, res) => {
+  const { username, password } = req.body;
+
+  // ユーザー名とパスワードのバリデーション（簡易的な例）
+  if (username === "validuser" && password === "password123") {
+    // ログイン成功時、Cookie にデータを保存
+    res.cookie("username", username, { httpOnly: true });
+
+    res.json({ success: true, message: "ログイン成功" });
+  } else {
+    res.json({ success: false, message: "ログイン失敗" });
+  }
+});
+
 app.listen(3000);
