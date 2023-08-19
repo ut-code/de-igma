@@ -1,3 +1,5 @@
+//const e = require("express")
+
 const cookieAge = 30 //cookieの保存日数
 
 
@@ -13,8 +15,14 @@ username_render = document.getElementById("user-name-current")
 hidden_alert_change = document.getElementById("hidden-alert-change")
 
 function getCookieJSON() {
-    const currentCookieJSON = JSON.parse(decodeURIComponent(document.cookie.split(";")[0].split("=")[1]))
+    let currentCookieJSON = {}
+    try {
+        currentCookieJSON = JSON.parse(decodeURIComponent(document.cookie.split(";")[0].split("=")[1]))
+    } catch (error) {
+        console.log(error)
+    }finally{
     return currentCookieJSON
+    }
 }
 function getUserName(){ //cookieからusernameを取得
     const json = getCookieJSON()
@@ -28,8 +36,11 @@ function cookieCombine(ObjExpression,age){ //cookieにObjExpressionを追加、�
     document.cookie = "data=" + encodeURIComponent(JSON.stringify(cookieJSON)) + ";expires="+age.toString()
 }
 //ここまでlibの関数定義
+function sendToAccPage(){
+    document.location.href = "../" 
+}
 
-const isRegistered = true
+let isRegistered = true
 if(getUserName() == ""){ //すでにアカウントがcookie内にあるか
     isRegistered = false
 }
@@ -37,8 +48,10 @@ function ErrorNullName(){ //名前が空白だった時の処理
     //見た目的にobviousなものが好ましい
     if(isRegistered){
         hidden_alert_change.textContent = "Please Input Your New Username"
+        hidden_alert_change.style.backgroundColor = "red"
     }else{
         hidden_alert_new.textContent = "Please Input Your Username"
+        hidden_alert_new.style.backgroundColor = "red"
     }
 }
 
@@ -55,7 +68,8 @@ if(isRegistered == false){ //アカウント未所持時の処理
     }else{
         const usernameEncoded = encodeURI(accNewName);
         const uniqueUserId = Math.floor(Math.random()* (2**64))
-        cookieCombine({usernameEncoded: usernameEncoded, userid: uniqueUserId}, cookieAge)   
+        cookieCombine({usernameEncoded: usernameEncoded, userid: uniqueUserId}, cookieAge)
+        sendToAccPage();
     }
 }
 }
@@ -68,6 +82,7 @@ if(isRegistered){ //アカウント所持時の処理
     }else{
         const usernameEncoded = encodeURI(accNewName);
         cookieCombine({usernameEncoded: usernameEncoded}, cookieAge)
+        sendToAccPage();
     }
     }
 }
