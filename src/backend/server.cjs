@@ -136,6 +136,12 @@ exports.__esModule = true;
 var client_1 = require("@prisma/client");
 var express_1 = require("express");
 var app = express_1();
+var cookie_parser_1 = require("cookie-parser");
+var cors_1 = require("cors");
+app.use(express_1.json()); // JSON ボディをパースするためのミドルウェア
+app.use(cookie_parser_1());
+app.use(cors_1());
+app.use(express_1.urlencoded({ extended: true }));
 app.use(express_1.static("src/static"));
 var client = new client_1.PrismaClient();
 function main() {
@@ -198,14 +204,12 @@ app.get("/data", function (request, response) {
     });
   });
 });
+app.post("/addHirabun", function (request, response) {
+  var hirabun = request.body.hirabun;
+  addHirabun(hirabun);
+});
 // addHirabun("I have a pen.")
 //cookie関連
-var cors = require("cors");
-var cookie_parser_1 = require("cookie-parser");
-app.use(express_1.json()); // JSON ボディをパースするためのミドルウェア
-app.use(cookie_parser_1());
-app.use(cors());
-app.use(express_1.urlencoded({ extended: true }));
 app.post("/sendUserName", function (req, res) {
   var _a = req.body,
     username = _a.username,

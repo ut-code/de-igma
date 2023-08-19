@@ -6,8 +6,15 @@
     <title>Document</title>
   </head>
   <body>
-    <div>あいうえ</div>
-    <button id="fetch-button">押す</button>
+    <button id="fetch-button">現在の平文を見る</button>
+    <div id="currentHirabun"></div>
+    <button id="addButton">平文を追加する</button>
+    <input
+      id="add"
+      type="text"
+      pattern="[A-Za-z\s]+"
+      placeholder="英語の文章のみ入力してください。ピリオドやカンマは入力できません。"
+    />
     <script src="./script.js"></script>
   </body>
 </html>
