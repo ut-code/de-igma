@@ -2,15 +2,19 @@
 :root{
     --main-bg-color: aliceblue;
     --main-text-color: rgb(59,110,206);
-    --button-background-color: rgb(237, 255, 39);
+
+    --button-bg-color: rgb(237, 255, 39);
     --button-text-color: rgb(67, 71, 2);
     --button-border-color: #d1cc9e;
-    --button-disabled-background-color: rgb(248, 255, 172);
+
+    --button-disabled-bg-color: rgb(248, 255, 172);
     --button-disabled-text-color: rgb(196, 211, 26);
     --button-disabled-border-color: var(--button-border-color);
+
     --inputbox-bg-color: rgb(226, 255, 230);
     --inputbox-text-color: var(--main-text-color);
     --inputbox-border-color: rgb(158, 223, 158);
+
     --answercorrect-text-color: red;
     --answercommentary-text-color: black;
     --answercorrect-bg-color: var(--main-bg-color);
@@ -78,14 +82,14 @@
     margin-right: 0px;
 }
 #submit{
-    background-color: var(--button-background-color);
+    background-color: var(--button-bg-color);
     color: var(--button-text-color);
     border-color: var(--button-border-color);
     margin: 0px, 0px;
     font-size: large;
 }
 #next{
-    background-color: var(--button-background-color);
+    background-color: var(--button-bg-color);
     color: var(--button-text-color);
     margin: 1vw 2vw;
 }
