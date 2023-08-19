@@ -1,3 +1,4 @@
+
 //DOMContentLoaded イベントを使用することで、DOMが完全に構築されてからコードが実行されることが保証される。
 document.addEventListener("DOMContentLoaded", () => {
   const usernameInput = document.getElementById("username");
@@ -29,3 +30,5 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+//userのcookie履歴がない場合はaccManagerに自動遷移
+//cookie履歴がある場合はuseridをDBで照合して対応するqidの問題を表示
