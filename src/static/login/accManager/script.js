@@ -7,7 +7,7 @@ new_account_button = document.getElementById("create-account-button")
 hidden_alert_new = document.getElementById("hidden-alert-new")
 
 manage_account_base = document.getElementById("manage-account-base")
-change_username_input = document.getElementsById("user-name-change")
+change_username_input = document.getElementById("user-name-change")
 change_username_button = document.getElementById("submit-user-name-button")
 username_render = document.getElementById("user-name-current")
 hidden_alert_change = document.getElementById("hidden-alert-change")
